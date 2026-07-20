@@ -519,3 +519,39 @@ But our story is only just beginning.
 
 </div>
 
+<script>
+let currentSlide = 0;
+
+const slides = document.querySelectorAll(".slide");
+
+const captions = [
+"🌹 The picture that always makes me smile. Every time I see it, I'm reminded how lucky I am to have you.",
+"🌄 I loved seeing you share your beautiful moments with me.",
+"😂 I missed you a lot... I once sent you a really long message, then deleted it an hour later 😹",
+"❤️ Every memory with you becomes one of my favorites."
+];
+
+function showSlide(index){
+    slides.forEach(slide => slide.classList.remove("active"));
+
+    if(index < 0) currentSlide = slides.length - 1;
+    else if(index >= slides.length) currentSlide = 0;
+    else currentSlide = index;
+
+    slides[currentSlide].classList.add("active");
+    document.getElementById("caption").innerHTML = captions[currentSlide];
+}
+
+function nextSlide(){
+    showSlide(currentSlide + 1);
+}
+
+function prevSlide(){
+    showSlide(currentSlide - 1);
+}
+
+showSlide(0);
+</script>
+
+</body>
+</html>
