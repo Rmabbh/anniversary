@@ -505,6 +505,20 @@ h.remove();
 
 alert("❤️ Sending you a thousand virtual hugs! I can't wait until I can give you a real one. ❤️");
 
+} function toggle(id) {
+    // Hide all cards
+    document.querySelectorAll(".card").forEach(card => {
+        card.style.display = "none";
+    });
+
+    // Show only the one that was clicked
+    document.getElementById(id).style.display = "block";
+
+    // Scroll smoothly to it
+    document.getElementById(id).scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
 }
 
 </script>
